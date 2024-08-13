@@ -1,0 +1,152 @@
+:root {
+  --whiteColor: #fff;
+  --pinkColor: rgba(240, 172, 226, 0.6);
+  --greenColor: rgb(145, 255, 145);
+  --redColor: rgba(234, 67, 104);
+  --blueColor: rgb(67, 178, 234);
+  --gradientColor: linear-gradient(to right, #da4453, #89216b);
+  --transparentColor: rgba(255, 255, 255, 0.3);
+
+  --boxShadowBlack: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --boxShadowBlue: 0 2px 10px rgba(106, 197, 242, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html, body {
+  font-size: 62.5%;
+  color: var(--whiteColor);
+}
+
+body {
+  background: var(--gradientColor);
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+button {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  width: 40%;
+}
+
+.todo-form {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.todo-form__input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.todo-form__input:focus {
+  box-shadow: var(--boxShadowBlue);
+  outline: none;
+}
+
+.todo-form__button {
+  padding: 1rem;
+  margin-left: .5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.todo-form__button:hover,
+.delete-todos:hover {
+  box-shadow: var(--boxShadowBlue);
+  cursor: pointer;
+}
+
+
+.todo-list {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.todo-list__item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.todo-list__text-container{
+  padding: 1rem;
+  padding-right: 8rem;
+  width: 100%;
+  border-radius: .4rem;
+  box-shadow: var(--boxShadowBlack);
+  background-color: var(--transparentColor);
+  font-size: 2rem;
+  word-wrap: break-word;
+}
+
+.todo-list__text-container.completed{
+  background-color: var(--redColor)
+}
+
+.todo-list__buttons {
+  position: absolute;
+  top: .5rem;
+  right: 0;
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+  display: flex;
+}
+
+.todo-list__check,
+.todo-list__delete {
+  background: none;
+  border: none;
+  color: var(--whiteColor);
+  font-size: 2.5rem;
+}
+
+.todo-list__check.completed {
+  color: var(--greenColor);
+}
+
+.todo-list__check:hover {
+  color: var(--greenColor);
+}
+.todo-list__delete:hover {
+  color: var(--redColor);
+}
+
+.delete-todos {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: .4rem;
+  background-color: var(--transparentColor) ;
+  color: var(--whiteColor);
+  font-size: 1.5rem;
+}
