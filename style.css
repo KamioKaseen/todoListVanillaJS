@@ -142,6 +142,7 @@ button:hover {
 }
 
 .delete-todos {
+  display: none;
   margin-top: 2rem;
   padding: 1rem;
   border: none;
@@ -150,7 +151,6 @@ button:hover {
   color: var(--whiteColor);
   font-size: 1.5rem;
 }
-
 
 @media (max-width: 768px) {
     .container {

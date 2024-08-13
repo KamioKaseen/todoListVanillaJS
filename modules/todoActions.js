@@ -29,6 +29,8 @@ export function addTodo(event) {
     deleteButton.addEventListener('click', () => deleteTodo(uniqueId));
 
     input.value = '';
+
+    deleteButtonVisibility();
 }
 
 export function toggleComplete(todoItem, textContainer, checkButton) {
@@ -46,10 +48,23 @@ export function deleteTodo(taskId) {
         todoItem.remove();
     }
     removeTodoFromStorage(taskId);
+    deleteButtonVisibility();
 }
 
 export function deleteAllTodos() {
     const todoList = document.querySelector('.todo-list');
     todoList.innerHTML = '';
     localStorage.removeItem('todos');
+    deleteButtonVisibility();
 }
+
+export function deleteButtonVisibility() {
+    const todoList = document.querySelector('.todo-list');
+    const deleteButton = document.querySelector('.delete-todos');
+  
+    if (todoList.children.length > 0) {
+        deleteButton.style.display = 'block';
+    } else {
+        deleteButton.style.display = 'none';
+    }
+  }

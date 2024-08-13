@@ -1,6 +1,7 @@
 import createTodoItem from "./createTodoItem.js";
 import { deleteTodo } from "./todoActions.js";
 import { toggleComplete } from "./todoActions.js";
+import { deleteButtonVisibility } from "./todoActions.js";
 
 export function saveTodo(todo) {
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -20,6 +21,8 @@ export function loadTodos() {
         checkButton.addEventListener('click', () => toggleComplete(todoItem, todoItemTextContainer, checkButton));
         deleteButton.addEventListener('click', () => deleteTodo(todo.id));
     });
+
+    deleteButtonVisibility();
 }
 
 export function updateTodoInStorage(taskId, isCompleted) {
